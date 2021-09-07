@@ -34,16 +34,16 @@ def removesp(text):
 def removenl(text):
     analyze=""
     for i in text:
-        if i =="/n":
+        if i =="/n" or i=="/r":
             pass
         analyze+=i 
     return analyze               
 def analyzetext(request):
-    djtext = request.GET.get('text', 'default')
-    removepunch = request.GET.get('removepunc', 'off')
-    rem_nl = request.GET.get('removenl', 'off')
-    capt = request.GET.get('capitalize', 'off')
-    rem_sp = request.GET.get('removesp', 'off')   
+    djtext = request.POST.get('text', 'default')
+    removepunch = request.POST.get('removepunc', 'off')
+    rem_nl = request.POST.get('removenl', 'off')
+    capt = request.POST.get('capitalize', 'off')
+    rem_sp = request.POST.get('removesp', 'off')   
     print(djtext)
     print(removepunc)
     print(rem_nl)
